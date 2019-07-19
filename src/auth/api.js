@@ -2,12 +2,13 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 export const signUp = credentials => {
+  console.log(credentials)
   return axios({
     method: 'POST',
     url: apiUrl + '/sign-up',
     data: {
       credentials: {
-        username: credentials.email,
+        username: credentials.username,
         email: credentials.email,
         password: credentials.password,
         password_confirmation: credentials.passwordConfirmation

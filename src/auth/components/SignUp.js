@@ -32,7 +32,7 @@ class SignUp extends Component {
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
-        this.setState({ email: '', password: '', passwordConfirmation: '' })
+        this.setState({ username: '', email: '', password: '', passwordConfirmation: '' })
         alert(messages.signUpFailure, 'danger')
       })
   }
@@ -49,7 +49,7 @@ class SignUp extends Component {
           name="username"
           value={username}
           type="username"
-          placeholder="username"
+          placeholder="Username"
           onChange={this.handleChange}
         />
         <label htmlFor="email">Email</label>
