@@ -1,11 +1,16 @@
+.single-user {
+  margin: 0 10px;
+}
+
 .user-container {
+  border: 1px solid black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  margin-top: 200px;
+  margin: 10px auto;
 }
 
 .userlist-profiles {
   border-radius: 50%;
-  width: 100px;
+  width: 50px;
 }

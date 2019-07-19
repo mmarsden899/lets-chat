@@ -14,6 +14,7 @@ class Users extends Component {
   }
 
   async componentDidMount () {
+    console.log(this.props)
     const response = await axios(`${apiUrl}/users`)
     this.setState({ users: response.data.users })
     console.log(this.state.users)
@@ -21,8 +22,14 @@ class Users extends Component {
 
   render () {
     const { users } = this.state
-    const usersList = users.map(user => (
-      <div key={user._id}>
+    const usersList = users.filter(user => {
+      if (this.props.user) {
+        return user.username !== this.props.user.username
+      } else {
+        return user
+      }
+    }).map(user => (
+      <div key={user._id} className="single-user">
         <img src={user.profile} className="userlist-profiles"/>
         <p>{user.username}</p>
       </div>
