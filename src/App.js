@@ -9,6 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AutoDismissAlert from './auth/components/AutoDismissAlert'
+import Users from './users/components/Users'
 
 class App extends Component {
   constructor () {
@@ -41,6 +42,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Users alert={this.alert} match={this.match} user={this.state.user} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
