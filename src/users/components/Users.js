@@ -14,10 +14,8 @@ class Users extends Component {
   }
 
   async componentDidMount () {
-    console.log(this.props)
     const response = await axios(`${apiUrl}/users`)
     this.setState({ users: response.data.users })
-    console.log(this.state.users)
   }
 
   render () {

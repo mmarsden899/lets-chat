@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
+$blue: #0390fc;
 $charcoal: #bbb;
+$white: #fff;
+$righteous: 'Righteous', cursive;
 
 .main-header {
   align-items: center;
-  background-color: white;
+  background-color: $blue;
   border-bottom: 1px solid $charcoal;
+  color: $white;
   display: flex;
+  font-family: $righteous;
   height: 100px;
   padding: 0 20px;
 
