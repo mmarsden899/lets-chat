@@ -2,6 +2,11 @@ $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
+$background: #f5f5f5;
+
+html {
+  background-color: $background;
+}
 
 .flash-success,
 .flash-warning,

@@ -1,3 +1,21 @@
+
+.find-user {
+  border: 0;
+  border-radius: 5px;
+  color: #c9c5c5;
+  outline: 0;
+}
+
+.find-user:focus {
+  color: rgb(68, 68, 68);
+}
+
 .home-body {
   width: 100%;
+}
+
+.search-icon {
+  color: #c9c5c5;
+  font-size: 12px;
+  margin: auto 5px;
 }
