@@ -17,9 +17,17 @@ $righteous: 'Righteous', cursive;
 
   a,
   span {
+    color: $white;
     font-size: 1.2em;
     margin: 0 15px;
   }
+
+  a:hover {
+    color: $charcoal;
+    text-decoration: none;
+    transition: .5s;
+  }
+
 }
 
 .main-header > nav {

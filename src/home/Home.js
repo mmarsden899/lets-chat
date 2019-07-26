@@ -33,7 +33,7 @@ class Home extends Component {
 
   render () {
     const users = this.state.users.filter(user =>
-      user.username.includes(this.state.userfield)
+      user.username.includes(this.state.userfield) && this.state.userfield
     ).map(user => (
       <li key={user._id}>{user.username}</li>
     ))
