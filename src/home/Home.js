@@ -32,10 +32,10 @@ class Home extends Component {
   }
 
   render () {
-    const users = this.state.users.filter(user => {
+    const users = this.state.users.filter(user =>
       user.username.includes(this.state.userfield)
-    }).map(user => (
-      <h1 key={user._id}>user.username</h1>
+    ).map(user => (
+      <li key={user._id}>{user.username}</li>
     ))
     return (
       <div className='home-body'>
@@ -52,7 +52,9 @@ class Home extends Component {
             onChange={this.handleChange}
             maxLength="160"
           />
-          {users}
+          <ul>
+            {users}
+          </ul>
         </div>
         <div>
         </div>
