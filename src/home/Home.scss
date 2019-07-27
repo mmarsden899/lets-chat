@@ -14,8 +14,17 @@
   width: 100%;
 }
 
+.profile-images {
+  border-radius: 50%;
+  width: 40px;
+}
+
 .search-icon {
   color: #c9c5c5;
   font-size: 12px;
   margin: auto 5px;
+}
+
+.searchbar-div {
+  width: 400px;
 }

@@ -33,9 +33,17 @@ class Home extends Component {
 
   render () {
     const users = this.state.users.filter(user =>
-      user.username.includes(this.state.userfield) && this.state.userfield
-    ).map(user => (
-      <li key={user._id}>{user.username}</li>
+      user.username.includes(this.state.userfield) &&
+      this.state.userfield).map(user => (
+      <div
+        key={user._id}
+      >
+        <img
+          src={user.profile}
+          className="profile-images"
+        />
+        {user.username}
+      </div>
     ))
     return (
       <div className='home-body'>
@@ -52,9 +60,7 @@ class Home extends Component {
             onChange={this.handleChange}
             maxLength="160"
           />
-          <ul>
-            {users}
-          </ul>
+          {users}
         </div>
         <div>
         </div>
