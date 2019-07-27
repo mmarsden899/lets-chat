@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import UserSearch from '../usersearch/UserSearch'
 import Users from '../users/components/Users'
 import Chat from '../Chat/Chat'
 import './Home.scss'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 class Home extends Component {
   constructor (props) {
@@ -32,38 +30,9 @@ class Home extends Component {
   }
 
   render () {
-    const users = this.state.users.filter(user =>
-      user.username.includes(this.state.userfield) &&
-      this.state.userfield).map(user => (
-      <div
-        key={user._id}
-      >
-        <img
-          src={user.profile}
-          className="profile-images"
-        />
-        {user.username}
-      </div>
-    ))
     return (
       <div className='home-body'>
-        <div className='searchbar-div'>
-          <FontAwesomeIcon
-            className="search-icon"
-            icon={faSearch}
-          />
-          <input
-            className="find-user"
-            required type="text"
-            name="userfield"
-            placeholder="find a user"
-            onChange={this.handleChange}
-            maxLength="160"
-          />
-          {users}
-        </div>
-        <div>
-        </div>
+        <UserSearch/>
         <Users/>
         <Chat/>
       </div>

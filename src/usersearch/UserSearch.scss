@@ -1,0 +1,29 @@
+$border: rgba(0, 0, 0, .125);
+
+.find-user {
+  border: 0;
+  border-radius: 5px;
+  color: #c9c5c5;
+  outline: 0;
+  width: 200px;
+}
+
+.find-user:focus {
+  color: rgb(68, 68, 68);
+}
+
+.profile-images {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.search-icon {
+  color: #c9c5c5;
+  font-size: 12px;
+  margin: auto 5px;
+}
+
+.searchbar-div {
+  width: 400px;
+  border: 1px solid $border;
+}
