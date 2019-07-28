@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import UserSearch from '../usersearch/UserSearch'
-import Users from '../users/components/Users'
 import Chat from '../Chat/Chat'
 import './Home.scss'
 import apiUrl from '../apiConfig'
@@ -33,7 +32,6 @@ class Home extends Component {
     return (
       <div className='home-body'>
         <UserSearch/>
-        <Users/>
         <Chat/>
       </div>
     )

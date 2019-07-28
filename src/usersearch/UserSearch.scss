@@ -1,4 +1,5 @@
 $border: rgba(0, 0, 0, .125);
+$white: #fff;
 
 .find-user {
   border: 0;
@@ -6,10 +7,15 @@ $border: rgba(0, 0, 0, .125);
   color: #c9c5c5;
   outline: 0;
   width: 200px;
+  margin-left: 5px;
 }
 
 .find-user:focus {
   color: rgb(68, 68, 68);
+}
+
+.individual-user {
+  margin: 5px;
 }
 
 .profile-images {
@@ -23,7 +29,30 @@ $border: rgba(0, 0, 0, .125);
   margin: auto 5px;
 }
 
-.searchbar-div {
-  width: 400px;
+.search-component {
+  background-color: $white;
   border: 1px solid $border;
+  width: 450px;
+  margin-left: 5px;
+  height: 400px;
+  margin-top: 10px;
+}
+
+.search-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+}
+
+.searchbar-div {
+  border: 1px solid $border;
+  border-radius: 5px;
+  width: 400px;
+  margin-top: 10px;
+}
+
+.searched-users > div:first-child {
+  margin-top: 10px;
 }

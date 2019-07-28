@@ -7,6 +7,8 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
+const moment = require('moment')
+
 class UserSearch extends Component {
   constructor (props) {
     super(props)
@@ -36,29 +38,35 @@ class UserSearch extends Component {
       this.state.userfield).map(user => (
       <div
         key={user._id}
+        className="individual-user"
       >
         <img
           src={user.profile}
           className="profile-images"
         />
         {user.username}
+        {moment(user.updatedAt).fromNow()}
       </div>
     ))
     return (
-      <div>
-        <div className='searchbar-div'>
-          <FontAwesomeIcon
-            className="search-icon"
-            icon={faSearch}
-          />
-          <input
-            className="find-user"
-            required type="text"
-            name="userfield"
-            placeholder="find a user"
-            onChange={this.handleChange}
-            maxLength="25"
-          />
+      <div className="search-component">
+        <div className="search-container">
+          <div className='searchbar-div'>
+            <FontAwesomeIcon
+              className="search-icon"
+              icon={faSearch}
+            />
+            <input
+              className="find-user"
+              required type="text"
+              name="userfield"
+              placeholder="find a user"
+              onChange={this.handleChange}
+              maxLength="25"
+            />
+          </div>
+        </div>
+        <div className="searched-users">
           {users}
         </div>
       </div>
