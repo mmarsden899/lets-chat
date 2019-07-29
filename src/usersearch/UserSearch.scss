@@ -1,17 +1,23 @@
 $border: rgba(0, 0, 0, .125);
 $white: #fff;
+$search: #c9c5c5;
+$searchfocus: rgb(68, 68, 68);
+
+span > * {
+  display: inline-block;
+}
 
 .find-user {
   border: 0;
   border-radius: 5px;
-  color: #c9c5c5;
+  color: $search;
+  margin-left: 5px;
   outline: 0;
   width: 200px;
-  margin-left: 5px;
 }
 
 .find-user:focus {
-  color: rgb(68, 68, 68);
+  color: $searchfocus;
 }
 
 .individual-user {
@@ -24,7 +30,7 @@ $white: #fff;
 }
 
 .search-icon {
-  color: #c9c5c5;
+  color: $search;
   font-size: 12px;
   margin: auto 5px;
 }
@@ -32,10 +38,9 @@ $white: #fff;
 .search-component {
   background-color: $white;
   border: 1px solid $border;
-  width: 450px;
-  margin-left: 5px;
   height: 400px;
-  margin-top: 10px;
+  margin: 10px 0 0 5px;
+  width: 450px;
 }
 
 .search-container {
@@ -49,10 +54,10 @@ $white: #fff;
 .searchbar-div {
   border: 1px solid $border;
   border-radius: 5px;
-  width: 400px;
   margin-top: 10px;
+  width: 400px;
 }
 
 .searched-users > div:first-child {
-  margin-top: 10px;
+  margin-top: 20px;
 }

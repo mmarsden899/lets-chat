@@ -40,12 +40,14 @@ class UserSearch extends Component {
         key={user._id}
         className="individual-user"
       >
-        <img
-          src={user.profile}
-          className="profile-images"
-        />
-        {user.username}
-        {moment(user.updatedAt).fromNow()}
+        <span>
+          <img
+            src={user.profile}
+            className="profile-images"
+          />
+          <h6>{user.username}</h6>
+          <small>{moment(user.updatedAt).fromNow()}</small>
+        </span>
       </div>
     ))
     return (
