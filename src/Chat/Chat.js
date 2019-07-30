@@ -11,7 +11,8 @@ class Chat extends Component {
 
     this.state = {
       users: [],
-      room: {}
+      room: {},
+      message: ''
     }
   }
 
@@ -30,11 +31,40 @@ class Chat extends Component {
     return nextProps.room === this.props.room
   }
 
+  handleChange = event => {
+    const message = event.target.value
+    this.setState({ message: message })
+  }
+
+  handleSubmit = async event => {
+    event.preventDefault()
+    event.persist()
+    await axios({
+      url: `${apiUrl}/messages`,
+      method: 'POST',
+      headers: {
+        'Authorization': `Token token=${this.props.user.token}`
+      },
+      data: {
+        message: {
+          body: this.state.message,
+          chat: this.props.room._id
+        }
+      }
+    })
+  }
+
   render () {
     return (
       <div id="chat-window" className="chat-window">
         <h3 className="chat-h3">Currently in room {this.props.room ? this.state.room.name : ''}</h3>
         <div className="chat-container">
+          <div>{this.props.room.messages ? this.state.room.messages.map(message => (
+            <div key={message._id}>
+              <span><p>{message.owner.username}:</p>
+                <p>{message.body}</p></span>
+            </div>
+          )) : ' '}</div>
           <div className='chat-div'>
             <input
               className="chat-input"
@@ -44,7 +74,9 @@ class Chat extends Component {
               onChange={this.handleChange}
               maxLength="50"
             />
-            <Button className="btn-sm button">submit</Button>
+            <Button
+              className="btn-sm button"
+              onClick={this.handleSubmit}>submit</Button>
           </div>
         </div>
       </div>

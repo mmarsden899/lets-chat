@@ -37,7 +37,7 @@ class Home extends Component {
     return (
       <div className='home-body'>
         <UserSearch/>
-        <Chat room={this.state.room}/>
+        <Chat room={this.state.room} user={this.props.user}/>
         <ChatRooms setRoom={this.setRoom}/>
       </div>
     )
