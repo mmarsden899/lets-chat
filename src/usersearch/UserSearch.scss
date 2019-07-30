@@ -41,7 +41,7 @@ span > * {
   border: 1px solid $border;
   height: 400px;
   margin: 25px 0 0;
-  width: 375px;
+  width: 325px;
 }
 
 .search-container {
@@ -49,14 +49,14 @@ span > * {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 375px;
+  width: 325px;
 }
 
 .searchbar-div {
   border: 1px solid $border;
   border-radius: 5px;
   margin-top: 15px;
-  width: 350px;
+  width: 300px;
 }
 
 .searched-users > div:first-child {
