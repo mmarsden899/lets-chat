@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import UserSearch from '../usersearch/UserSearch'
 import Chat from '../Chat/Chat'
+import ChatRooms from '../chatrooms/components/ChatRooms'
 import './Home.scss'
 import apiUrl from '../apiConfig'
 import axios from 'axios'
@@ -33,6 +34,7 @@ class Home extends Component {
       <div className='home-body'>
         <UserSearch/>
         <Chat/>
+        <ChatRooms/>
       </div>
     )
   }

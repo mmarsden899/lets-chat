@@ -1,0 +1,12 @@
+$border: rgba(0, 0, 0, .125);
+$white: #fff;
+$search: #c9c5c5;
+$searchfocus: rgb(68, 68, 68);
+
+.chatrooms-container {
+  background-color: $white;
+  border: 1px solid $border;
+  height: 400px;
+  margin: 25px 0 0;
+  width: 200px;
+}
