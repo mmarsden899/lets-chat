@@ -34,13 +34,22 @@ class ChatRooms extends Component {
     this.setState({ form: form })
   }
 
+  setRooms = async event => {
+    const { setRoom } = this.props
+    await axios(`${apiUrl}/chats/${event.target.id}`)
+      .then(res => setRoom(res.data.chat))
+  }
+
   render () {
     const chats = this.state.chats.filter(chat => (
       chat.name.toLowerCase().includes(this.state.form.toLowerCase())
     )).map(chat => (
       <div key={chat._id}>
         <span>
-          <h6 className="returned-room">{chat.name}</h6>
+          <h6
+            className="returned-room"
+            id={chat._id}
+            onClick={this.setRooms}>{chat.name}</h6>
           <small>{moment(chat.updatedAt).fromNow()}</small>
         </span>
       </div>

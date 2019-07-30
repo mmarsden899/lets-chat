@@ -13,8 +13,14 @@ class Home extends Component {
 
     this.state = {
       users: [],
-      userfield: ''
+      userfield: '',
+      room: {}
     }
+  }
+
+  setRoom = room => {
+    this.setState({ room })
+    console.log(this.state)
   }
 
   async componentDidMount () {
@@ -31,8 +37,8 @@ class Home extends Component {
     return (
       <div className='home-body'>
         <UserSearch/>
-        <Chat/>
-        <ChatRooms/>
+        <Chat room={this.state.room}/>
+        <ChatRooms setRoom={this.setRoom}/>
       </div>
     )
   }

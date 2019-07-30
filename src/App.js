@@ -20,7 +20,7 @@ class App extends Component {
     this.state = {
       user: null,
       alerts: [],
-      room: ''
+      room: null
     }
   }
 
@@ -28,12 +28,14 @@ class App extends Component {
 
   clearUser = () => this.setState({ user: null })
 
+  setRoom = room => this.setState({ room })
+
   alert = (message, type) => {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
 
   render () {
-    const { alerts, user } = this.state
+    const { alerts, user, room } = this.state
 
     return (
       <React.Fragment>
@@ -46,22 +48,22 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Home alert={this.alert} match={this.match} user={user} />
+            <Home alert={this.alert} match={this.match} user={user} setRoom={this.setRoom}/>
           )} />
           <AuthenticatedRoute user={user} path='/admin' render={() => (
-            <NewChat alert={this.alert} match={this.match} user={user} />
+            <NewChat alert={this.alert} match={this.match} user={user}/>
           )} />
           <Route path='/sign-up' render={() => (
-            <SignUp alert={this.alert} setUser={this.setUser} />
+            <SignUp alert={this.alert} setUser={this.setUser} room={room} />
           )} />
           <Route path='/sign-in' render={() => (
-            <SignIn alert={this.alert} setUser={this.setUser} />
+            <SignIn alert={this.alert} setUser={this.setUser} room={room} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-            <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
+            <SignOut alert={this.alert} clearUser={this.clearUser} user={user} room={room}/>
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword alert={this.alert} user={user} />
+            <ChangePassword alert={this.alert} user={user} room={room} />
           )} />
         </main>
       </React.Fragment>

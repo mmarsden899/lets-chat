@@ -11,7 +11,7 @@ class Chat extends Component {
 
     this.state = {
       users: [],
-      room: ''
+      room: {}
     }
   }
 
@@ -21,10 +21,19 @@ class Chat extends Component {
     console.log(this.props)
   }
 
+  shouldComponentUpdate (nextProps) {
+    console.log(nextProps)
+    console.log(this.props)
+    if (nextProps.room !== this.props.room) {
+      this.setState({ room: nextProps.room })
+    }
+    return nextProps.room === this.props.room
+  }
+
   render () {
     return (
       <div id="chat-window" className="chat-window">
-        <h3 className="chat-h3">Currently in room {this.state.room}</h3>
+        <h3 className="chat-h3">Currently in room {this.props.room ? this.state.room.name : ''}</h3>
         <div className="chat-container">
           <div className='chat-div'>
             <input
