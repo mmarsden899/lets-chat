@@ -6,6 +6,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 
+const moment = require('moment')
+
 class ChatRooms extends Component {
   constructor (props) {
     super(props)
@@ -37,7 +39,10 @@ class ChatRooms extends Component {
       chat.name.toLowerCase().includes(this.state.form.toLowerCase())
     )).map(chat => (
       <div key={chat._id}>
-        <h6 className="returned-room">{chat.name}</h6>
+        <span>
+          <h6 className="returned-room">{chat.name}</h6>
+          <small>{moment(chat.updatedAt).fromNow()}</small>
+        </span>
       </div>
     ))
     return (
