@@ -25,8 +25,6 @@ class Home extends Component {
   handleChange = event => {
     const updatedField = event.target.value
     this.setState({ userfield: updatedField })
-    console.log(this.state.userfield)
-    console.log(this.state.users)
   }
 
   render () {

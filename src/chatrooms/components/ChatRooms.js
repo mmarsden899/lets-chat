@@ -12,7 +12,8 @@ class ChatRooms extends Component {
 
     this.state = {
       chats: [],
-      actSearch: false
+      actSearch: false,
+      form: ''
     }
   }
 
@@ -23,12 +24,20 @@ class ChatRooms extends Component {
 
   actSearch = () => {
     this.setState({ actSearch: !this.state.actSearch })
+    this.setState({ form: '' })
+  }
+
+  handleChange = event => {
+    const form = event.target.value
+    this.setState({ form: form })
   }
 
   render () {
-    const chats = this.state.chats.map(chat => (
+    const chats = this.state.chats.filter(chat => (
+      chat.name.toLowerCase().includes(this.state.form.toLowerCase())
+    )).map(chat => (
       <div key={chat._id}>
-        <h4>{chat.name}</h4>
+        <h6 className="returned-room">{chat.name}</h6>
       </div>
     ))
     return (
@@ -40,13 +49,22 @@ class ChatRooms extends Component {
             onClick={this.actSearch}
           />
           { this.state.actSearch
-            ? <input/>
+            ? <input
+              className="find-user"
+              required type="text"
+              name="room"
+              placeholder="find a room"
+              onChange={this.handleChange}
+              maxLength="25"
+            />
             : <div>
               <h6 className="chatroom-h6">Rooms</h6>
             </div>
           }
         </div>
-        {chats}
+        <div className="returned-rooms">
+          {chats}
+        </div>
       </div>
     )
   }

@@ -28,3 +28,11 @@ h6 {
   justify-content: flex-start;
   padding: 5px 0;
 }
+
+.returned-room {
+  margin: 10px 0 0 10px;
+}
+
+.returned-rooms > div:first-child {
+  margin-top: 10px;
+}
