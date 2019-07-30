@@ -57,14 +57,16 @@ class Chat extends Component {
   render () {
     return (
       <div id="chat-window" className="chat-window">
-        <h3 className="chat-h3">Currently in room {this.props.room ? this.state.room.name : ''}</h3>
+        <h3 className="chat-h3">
+          {this.props.room ? this.state.room.name : ''}</h3>
         <div className="chat-container">
-          <div>{this.props.room.messages ? this.state.room.messages.map(message => (
-            <div key={message._id}>
-              <span><p>{message.owner.username}:</p>
-                <p>{message.body}</p></span>
-            </div>
-          )) : ' '}</div>
+          <div className="message-container">{this.props.room.messages
+            ? this.state.room.messages.map(message => (
+              <div key={message._id}>
+                <span><p>{message.owner.username}:</p>
+                  <p>{message.body}</p></span>
+              </div>
+            )) : ' '}</div>
           <div className='chat-div'>
             <input
               className="chat-input"

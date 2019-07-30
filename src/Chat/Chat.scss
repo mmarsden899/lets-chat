@@ -5,6 +5,8 @@ $white: #fff;
 $duckyellow: rgba(255, 239, 1, .8);
 
 .chat-h3 {
+  border-bottom: 1px solid $border;
+  padding-bottom: 5px;
   text-align: center;
 }
 
@@ -20,13 +22,16 @@ $duckyellow: rgba(255, 239, 1, .8);
   justify-content: flex-end;
 }
 
+.message-container {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 .chat-window {
   background-color: $white;
   border: 1px solid $border;
   height: 500px;
   margin-top: 25px;
-  overflow: hidden;
-  overflow-y: scroll;
   width: 700px;
 }
 
