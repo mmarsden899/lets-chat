@@ -3,10 +3,28 @@ $white: #fff;
 $search: #c9c5c5;
 $searchfocus: rgb(68, 68, 68);
 
+h6 {
+  margin: 0;
+}
+
 .chatrooms-container {
   background-color: $white;
   border: 1px solid $border;
   height: 400px;
   margin: 25px 0 0;
   width: 200px;
+}
+
+.chatroom-h6 {
+  left: 50px;
+  position: relative;
+}
+
+
+.chatroom-header {
+  border-bottom: 1px solid $border;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 5px 0;
 }
