@@ -4,12 +4,42 @@ $border: rgba(0, 0, 0, .125);
 $white: #fff;
 $duckyellow: rgba(255, 239, 1, .8);
 
+.chat-h3 {
+  text-align: center;
+}
+
+.button {
+  height: 30px;
+  margin: auto 0;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  justify-content: flex-end;
+}
+
 .chat-window {
   background-color: $white;
   border: 1px solid $border;
-  height: 400px;
+  height: 500px;
+  margin-top: 25px;
   overflow: hidden;
   overflow-y: scroll;
-  margin-top: 25px;
-  width: 650px;
+  width: 700px;
+}
+
+.chat-div {
+  border-top: 1px solid $border;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.chat-input {
+  border: 0;
+  margin: 10px 0 10px 15px;
+  outline: 0;
+  width: 575px;
 }

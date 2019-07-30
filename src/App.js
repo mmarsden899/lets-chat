@@ -19,7 +19,8 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      room: ''
     }
   }
 
@@ -45,7 +46,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Home alert={this.alert} match={this.match} user={this.state.user} />
+            <Home alert={this.alert} match={this.match} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/admin' render={() => (
             <NewChat alert={this.alert} match={this.match} user={user} />
