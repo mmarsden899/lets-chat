@@ -60,13 +60,15 @@ class Chat extends Component {
         <h3 className="chat-h3">
           {this.props.room ? this.state.room.name : ''}</h3>
         <div className="chat-container">
-          <div className="message-container">{this.props.room.messages
-            ? this.state.room.messages.map(message => (
-              <div key={message._id}>
-                <span><p>{message.owner.username}:</p>
-                  <p>{message.body}</p></span>
-              </div>
-            )) : ' '}</div>
+          <div className="message-container"
+            id="message-container">{
+              this.props.room.messages
+                ? this.state.room.messages.map(message => (
+                  <div key={message._id}>
+                    <span><p>{message.owner.username}:</p>
+                      <p>{message.body}</p></span>
+                  </div>
+                )) : ' '}</div>
           <div className='chat-div'>
             <input
               className="chat-input"

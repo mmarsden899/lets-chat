@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './ChatRooms.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { animateScroll } from 'react-scroll'
 
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -38,6 +39,14 @@ class ChatRooms extends Component {
     const { setRoom } = this.props
     await axios(`${apiUrl}/chats/${event.target.id}`)
       .then(res => setRoom(res.data.chat))
+      .then(this.scrollToBottom)
+  }
+
+  scrollToBottom () {
+    animateScroll.scrollToBottom({
+      containerId: 'message-container',
+      duration: 0
+    })
   }
 
   render () {
