@@ -38,6 +38,10 @@ small {
   margin: 10px 0 0 10px;
 }
 
+.returned-room:hover {
+  cursor: pointer;
+}
+
 .returned-rooms > div:first-child {
   margin-top: 10px;
 }
